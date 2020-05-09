@@ -18,6 +18,14 @@ pipeline{
 	}
  	}
 
+	stages{
+	 stage('Nexus deploy'){
+	   steps{
+	 nexusArtifactUploader artifacts: [[artifactId: 'Apurb-Devops', classifier: 'target/Apurb-Devops.war', file: 'target/Apurb-Devops.war', type: 'war']], credentialsId: 'in.javahome', groupId: 'in.javahome', nexusUrl: '172.31.43.5:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Apurb-test-snapshot', version: '3.0-SNAPSHOT'
+	}
+ 	}	
+		
+		
 
   }
 }
