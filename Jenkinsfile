@@ -1,3 +1,4 @@
+
 pipeline{
 	agent any
 	tools {
@@ -10,16 +11,12 @@ pipeline{
 	  url: 'https://github.com/Apurb1994/Apurb-Devops'
 	}
  	}
-  }
 
-	stages{
  
   stage('mvn clean package'){
 	   steps{
 	 sh 'mvn clean package'
 	}
  	}
-
-
+	}
   }
-}
